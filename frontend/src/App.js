@@ -8,7 +8,7 @@ function App() {
 
     // Fetch tickets from the backend API when the app loads
     useEffect(() => {
-        fetch('http://localhost:5000/api/tickets')  // Replace with your actual API endpoint
+        fetch('http://localhost:3001/api/tickets')  // Replace with your actual API endpoint
             .then(response => response.json())
             .then(data => setTickets(data))
             .catch(error => console.error('Error fetching tickets:', error));
@@ -22,7 +22,7 @@ function App() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/tickets', {
+            const response = await fetch('http://localhost:3001/api/tickets', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
