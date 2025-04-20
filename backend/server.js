@@ -31,7 +31,7 @@ client.connect()
 // GET - Fetch all tickets
 app.get('/api/tickets', async (req, res) => {
     try {
-        const result = await client.query('SELECT * FROM tickets');
+        const result = await client.query('SELECT * FROM tickets ORDER BY created_at DESC');
         res.json(result.rows);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch tickets' });
@@ -40,12 +40,13 @@ app.get('/api/tickets', async (req, res) => {
 
 // POST - Create a new ticket
 app.post('/api/tickets', async (req, res) => {
-    const { title, description } = req.body;
-    console.log('Creating ticket:', title, description); // Log for debug
+    const { title, description, priority } = req.body;
+    console.log('Creating ticket:', { title, description, priority });
+
     try {
         const result = await client.query(
-            'INSERT INTO tickets (title, description) VALUES ($1, $2) RETURNING *',
-            [title, description]
+            'INSERT INTO tickets (title, description, priority, status) VALUES ($1, $2, $3, $4) RETURNING *',
+            [title, description, priority || 'Medium', 'Open']
         );
         res.status(201).json(result.rows[0]);
     } catch (error) {
@@ -57,14 +58,16 @@ app.post('/api/tickets', async (req, res) => {
 // PUT - Update an existing ticket
 app.put('/api/tickets/:id', async (req, res) => {
     const { id } = req.params;
-    const { title, description } = req.body;
+    const { title, description, priority, status } = req.body;
+
     try {
         const result = await client.query(
-            'UPDATE tickets SET title = $1, description = $2 WHERE id = $3 RETURNING *',
-            [title, description, id]
+            'UPDATE tickets SET title = $1, description = $2, priority = $3, status = $4 WHERE id = $5 RETURNING *',
+            [title, description, priority, status, id]
         );
         res.json(result.rows[0]);
     } catch (error) {
+        console.error('Error updating ticket:', error);
         res.status(500).json({ error: 'Failed to update ticket' });
     }
 });
@@ -76,6 +79,7 @@ app.delete('/api/tickets/:id', async (req, res) => {
         await client.query('DELETE FROM tickets WHERE id = $1', [id]);
         res.status(204).end();
     } catch (error) {
+        console.error('Error deleting ticket:', error);
         res.status(500).json({ error: 'Failed to delete ticket' });
     }
 });
