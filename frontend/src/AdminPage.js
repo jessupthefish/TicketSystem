@@ -85,14 +85,14 @@ function AdminPage() {
                                         onChange={(e) => setEditDescription(e.target.value)}
                                     />
                                     <select value={editPriority} onChange={(e) => setEditPriority(e.target.value)}>
-                                        <option>Low</option>
-                                        <option>Medium</option>
-                                        <option>High</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
                                     </select>
                                     <select value={editStatus} onChange={(e) => setEditStatus(e.target.value)}>
-                                        <option>Open</option>
-                                        <option>In Progress</option>
-                                        <option>Closed</option>
+                                        <option value="Open">Open</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="Closed">Closed</option>
                                     </select>
                                     <div className="btn-group">
                                         <button onClick={saveEdit}>Save</button>

@@ -7,17 +7,34 @@ function UserPage() {
     const [priority, setPriority] = useState('Medium');
 
     const createTicket = async () => {
+        // Log the values before creating the ticket
+        console.log('Creating ticket with values:', {
+            title: newTitle,
+            description: newDescription,
+            priority: priority,
+        });
+
         if (!newTitle || !newDescription) {
             alert('Please provide both a title and a description for the ticket');
             return;
         }
 
         try {
+            // Log the fetch request payload
+            console.log('Sending POST request with body:', {
+                title: newTitle,
+                description: newDescription,
+                priority: priority,
+            });
+
             const response = await fetch('http://localhost:3001/api/tickets', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title: newTitle, description: newDescription, priority }),
             });
+
+            // Log the response status
+            console.log('Response status:', response.status);
 
             if (response.ok) {
                 alert('Ticket submitted successfully!');
@@ -64,9 +81,9 @@ function UserPage() {
                     value={priority}
                     onChange={(e) => setPriority(e.target.value)}
                 >
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>
             </div>
 
