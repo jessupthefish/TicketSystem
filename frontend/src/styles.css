@@ -1,0 +1,249 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #003366; /* Dark blue background for the entire app */
+    font-family: 'Roboto', sans-serif; /* A more modern font */
+    color: #fff; /* White text on the blue background */
+    padding: 20px;
+}
+
+/* --- User Page Styles --- */
+
+/* User Container (Form) */
+.user-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: #ffffff; /* White background for the form */
+    border-radius: 10px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.user-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1976d2; /* Accent color */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Label Styling */
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Input, Textarea, Select Fields */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fdfdfd; /* Light background for inputs */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #1976d2; /* Highlight on focus */
+    outline: none;
+}
+
+/* Textarea */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1976d2; /* Consistent blue button */
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Submit Button Hover */
+.submit-btn:hover {
+    background-color: #135ba1; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Admin Page Styles --- */
+
+/* Admin Container (Ticket List) */
+.admin-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff; /* White background for the admin container */
+    border-radius: 12px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Ticket List */
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Ticket Cards */
+.ticket-card {
+    background: #ffffff; /* White background for ticket cards */
+    border-left: 6px solid #1976d2; /* Accent color */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Ticket Card Hover */
+.ticket-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Ticket Card Title */
+.ticket-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #1976d2; /* Accent color for the title */
+}
+
+/* Ticket Card Paragraph */
+.ticket-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons in Ticket Card */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+/* Button Styling */
+button {
+    padding: 0.6rem 1.4rem;
+    background-color: #1976d2; /* Consistent blue button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #135ba1; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Cancel Button */
+button.cancel {
+    background-color: #777;
+}
+
+button.cancel:hover {
+    background-color: #555;
+}
+
+/* Delete Button */
+button.delete {
+    background-color: #e53935;
+}
+
+button.delete:hover {
+    background-color: #c62828;
+}
+
+/* --- App Styles --- */
+
+/* App General Styles */
+.App {
+    text-align: center;
+    background-color: #003366; /* Solid dark blue background */
+    min-height: 100vh;
+}
+
+/* App Header */
+.App-header {
+    background-color: #003366; /* Strong blue background for the header */
+    color: white;
+    padding: 2rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Title Styling */
+.App-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Navigation Bar */
+.App-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Link Styling */
+.App-link {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover Effect for Links */
+.App-link:hover {
+    background-color: #135ba1; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .App-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+

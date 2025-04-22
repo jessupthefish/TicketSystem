@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './UserPage.css';
+import './styles.css';
 
 function UserPage() {
     const [newTitle, setNewTitle] = useState('');

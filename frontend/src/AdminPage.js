@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './AdminPage.css'; // Add this for custom styles
+import './styles.css'; // Add this for custom styles
 
 function AdminPage() {
     const [tickets, setTickets] = useState([]);
