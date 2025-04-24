@@ -63,8 +63,6 @@ CREATE TABLE tickets (
 );
 ```
 
-Optional: add a trigger to update `updated_at`.
-
 ---
 
 ### 3. Backend Setup
