@@ -20,7 +20,7 @@ function UserPage() {
         }
 
         try {
-            // Log the fetch request payload
+            // Log the fetch request
             console.log('Sending POST request with body:', {
                 title: newTitle,
                 description: newDescription,
